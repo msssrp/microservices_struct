@@ -3,8 +3,8 @@ package users
 import "github.com/gorilla/mux"
 
 func InitializeRoutes(r *mux.Router){
-  r.Handle("/users", GetUsers()).Methods("GET")
-  r.Handle("/users", CreateUser()).Methods("POST")
-  r.Handle("/users/{id}", DeleteUser()).Methods("DELETE")
+  r.Handle("", GetUsers()).Methods("GET")
+  r.Handle("", CreateUser()).Methods("POST")
+  r.Handle("/{id}", DeleteUser()).Methods("DELETE")
 }
 
