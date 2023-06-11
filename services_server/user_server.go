@@ -4,16 +4,16 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/msssrp/Go-Sandbox/api/users"
+	"github.com/gorilla/mux"
 )
 
-func StartUserSever() {
+func StartUserSever(us *mux.Router) {
+
   userPort := "localhost:8081"
-	userRoter := users.SetupUsersRouter()
 
   userSever := &http.Server{
     Addr: userPort,
-    Handler: userRoter,
+    Handler: us,
   }
   
   log.Println("user server running on port 8081")
